@@ -1,11 +1,11 @@
-import { Canvas } from "@react-three/fiber";
-import "./App.css";
-import Scene from "./components/Scene";
+import { Canvas } from '@react-three/fiber';
+import './App.css';
+import Scene from './components/Scene';
 
 function App() {
   return (
     <div className="App">
-      <div id="canvas-container" style={{ height: "100vh" }}>
+      <div id="canvas-container" style={{ height: '100vh' }}>
         <Canvas>
           <Scene />
         </Canvas>

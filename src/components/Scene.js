@@ -1,5 +1,10 @@
-import { useFrame } from "@react-three/fiber";
-import { useState } from "react";
+import { useFrame } from '@react-three/fiber';
+import { useState } from 'react';
+import { ORBIT_CAMERA } from '../constants';
+import { Ground } from './Ground';
+import { MainCamera } from './MainCamera';
+import { OrbitCamera } from './OrbitCamera';
+import { Player } from './Player';
 
 function Scene({}) {
   const [zPos, setZPos] = useState(-30);
@@ -10,10 +15,14 @@ function Scene({}) {
 
   return (
     <>
+      {ORBIT_CAMERA && <OrbitCamera />}
+      <MainCamera position={[0, 10, 50]} />
+      <Player />
       <mesh position={[0, 0, zPos]}>
         <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={"orange"} />
+        <meshStandardMaterial color={'orange'} />
       </mesh>
+      <Ground />
     </>
   );
 }
